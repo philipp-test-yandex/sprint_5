@@ -6,6 +6,7 @@ import pytest
 @pytest.fixture(scope="function")
 def driver():
     driver = webdriver.Chrome()
+    driver.implicitly_wait(5)
     yield driver
     driver.quit()
 
@@ -25,6 +26,5 @@ def test_click_through_personal_account(driver):
 
     driver.find_element(By.XPATH, "//p[contains(text(),'Личный Кабинет')]").click()
 
-    time.sleep(1)
     assert "/account/profile" in driver.current_url, f"Ожидался URL, содержащий '/account/profile', но был {driver.current_url}"
 

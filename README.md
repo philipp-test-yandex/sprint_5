@@ -1,0 +1,6 @@
+conftest.py
+test_log_out.py
+test_login.py
+test_personal_account.py
+test_registration.py
+test_sections_of_constructor.py
